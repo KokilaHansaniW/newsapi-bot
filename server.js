@@ -6,7 +6,8 @@ const parser = new Parser();
 
 app.get("/news", async (req, res) => {
   try {
-    const feed = await parser.parseURL("https://feeds.bbci.co.uk/news/world/rss.xml");
+    //const feed = await parser.parseURL("https://feeds.bbci.co.uk/news/world/rss.xml");
+    const feed = await parser.parseURL("https://techcrunch.com/feed/");
 
     const articles = feed.items.slice(0, 5).map(item => ({
       title: item.title,
